@@ -1,13 +1,11 @@
 use std::ptr::NonNull;
 
-#[derive(Clone, Debug)]
+#[derive(Debug)]
 struct Node<T> {
     value: T,
     next: Option<NonNull<Node<T>>>,
 }
 impl<T> Node<T>
-where
-    T: Clone,
 {
     pub fn new(item: T) -> Self {
         Self {
@@ -25,8 +23,6 @@ struct Queue<T> {
 }
 
 impl<T> Queue<T>
-where
-    T: Clone,
 {
     pub fn new() -> Self {
         Self {
